@@ -1,5 +1,6 @@
 package com.zpan.countdown;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -7,11 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.zpan.countdown.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
-    private static final String TIME_OLD = "time_old";
-    private static final String TIME_YEAR = "time_year";
-    private static final String TIME_MONTH = "time_month";
-    private static final String TIME_DAY = "time_day";
 
     private ActivityMainBinding mBinding;
 
@@ -32,34 +28,18 @@ public class MainActivity extends AppCompatActivity {
         long todayLastTime = TimeUtil.timeToStamp(currentYear + "-" + currentMonth + "-" + currentDay + " 24:00:00");
         mBinding.vcCountDownToday.start(todayLastTime - currentTime);
 
-        int spOld = SharedPreferencesHelper.getInstance(this).getInteger(TIME_OLD, 60);
-        int spYear = SharedPreferencesHelper.getInstance(this).getInteger(TIME_YEAR, 2020);
-        String spMonth = SharedPreferencesHelper.getInstance(this).getString(TIME_MONTH);
-        String spDay = SharedPreferencesHelper.getInstance(this).getString(TIME_DAY);
-        if (TextUtils.isEmpty(spMonth)) {
-            mBinding.btnCountDownStart.setVisibility(View.VISIBLE);
-        } else {
-            mBinding.btnCountDownStart.setVisibility(View.GONE);
+        int spOld = SharedPreferencesHelper.getInstance(this).getInteger(Element.TIME_OLD, 60);
+        int spYear = SharedPreferencesHelper.getInstance(this).getInteger(Element.TIME_YEAR, 2020);
+        String spMonth = SharedPreferencesHelper.getInstance(this).getString(Element.TIME_MONTH);
+        String spDay = SharedPreferencesHelper.getInstance(this).getString(Element.TIME_DAY);
+        if (!TextUtils.isEmpty(spMonth)) {
             setCountDown(currentTime, spOld, spYear, spMonth, spDay);
-
-            mBinding.etInputOld.setText(spOld +"");
-            mBinding.etInputYear.setText(spYear + "");
-            mBinding.etInputMonth.setText(spMonth);
-            mBinding.etInputDay.setText(spDay);
+        } else {
+            mBinding.vcCountDown.setVisibility(View.GONE);
         }
 
-        mBinding.btnCountDownStart.setOnClickListener(v -> {
-            int old = Integer.valueOf(mBinding.etInputOld.getText().toString().trim());
-            int year = Integer.valueOf(mBinding.etInputYear.getText().toString().trim());
-            String month = mBinding.etInputMonth.getText().toString().trim();
-            String day = mBinding.etInputDay.getText().toString().trim();
-
-            setCountDown(currentTime, old, year, month, day);
-
-            SharedPreferencesHelper.getInstance(this).putInteger(TIME_OLD, old);
-            SharedPreferencesHelper.getInstance(this).putInteger(TIME_YEAR, year);
-            SharedPreferencesHelper.getInstance(this).putString(TIME_MONTH, month);
-            SharedPreferencesHelper.getInstance(this).putString(TIME_DAY, day);
+        mBinding.ivSetting.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, SettingActivity.class));
         });
     }
 

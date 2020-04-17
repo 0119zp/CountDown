@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CountDown</string>
+    <string name="app_name">倒计时</string>
 
     <string name="date_ch_template">%1$d年%2$d月%3$d日</string>
     <string name="date_ch_no_day_template">%1$d年%2$d月</string>
