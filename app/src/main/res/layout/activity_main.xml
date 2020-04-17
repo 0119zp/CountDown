@@ -4,15 +4,223 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f7f7f7"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:background="#8BC34A"
+        android:gravity="center"
+        android:text="时光不再，珍惜当下"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_count_down_year"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
+        android:textColor="#FF9800"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <cn.iwgang.countdownview.CountdownView
+        android:id="@+id/vc_count_down_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:isHideTimeBackground="false"
+        app:isShowDay="true"
+        app:isShowHour="true"
+        app:isShowMillisecond="true"
+        app:isShowMinute="true"
+        app:isShowSecond="true"
+        app:isTimeTextBold="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_count_down_year"
+        app:suffixDay="天"
+        app:suffixGravity="center"
+        app:suffixHour="时"
+        app:suffixMillisecond=""
+        app:suffixMinute="分"
+        app:suffixSecond="秒"
+        app:suffixTextColor="#f24444"
+        app:suffixTextSize="24sp"
+        app:timeBgColor="#8BC34A"
+        app:timeBgRadius="2dp"
+        app:timeBgSize="16dp"
+        app:timeTextColor="#333333"
+        app:timeTextSize="20sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_count_down_today"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
+        android:text="今日余额"
+        android:textColor="#FF9800"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vc_count_down_year" />
+
+    <cn.iwgang.countdownview.CountdownView
+        android:id="@+id/vc_count_down_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:isHideTimeBackground="false"
+        app:isShowDay="false"
+        app:isShowHour="true"
+        app:isShowMillisecond="true"
+        app:isShowMinute="true"
+        app:isShowSecond="true"
+        app:isTimeTextBold="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_count_down_today"
+        app:suffixDay="天"
+        app:suffixGravity="center"
+        app:suffixHour="时"
+        app:suffixMillisecond=""
+        app:suffixMinute="分"
+        app:suffixSecond="秒"
+        app:suffixTextColor="#f24444"
+        app:suffixTextSize="24sp"
+        app:timeBgColor="#8BC34A"
+        app:timeBgRadius="2dp"
+        app:timeBgSize="16dp"
+        app:timeTextColor="#333333"
+        app:timeTextSize="20sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_input_old_dec"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_vertical"
+        android:text="岁数"
+        android:textColor="#333"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vc_count_down_today" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_input_old"
+        android:layout_width="100dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="20dp"
+        android:hint="岁数"
+        android:textColor="#666"
+        android:textColorHint="#999"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_input_old_dec" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_input_birthday_dec"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_vertical"
+        android:text="生日"
+        android:textColor="#333"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_input_old" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_input_year"
+        android:layout_width="50dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:hint="年"
+        android:textColor="#666"
+        android:textColorHint="#999"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_input_birthday_dec" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_input_month"
+        android:layout_width="50dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:hint="月"
+        android:textColor="#666"
+        android:textColorHint="#999"
+        app:layout_constraintLeft_toRightOf="@+id/et_input_year"
+        app:layout_constraintTop_toBottomOf="@+id/tv_input_birthday_dec" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_input_day"
+        android:layout_width="50dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:hint="日"
+        android:textColor="#666"
+        android:textColorHint="#999"
+        app:layout_constraintLeft_toRightOf="@+id/et_input_month"
+        app:layout_constraintTop_toBottomOf="@+id/tv_input_birthday_dec" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_count_down_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="开始"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_input_year" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_count_down_old"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
+        android:textColor="#FF9800"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_count_down_start" />
+
+    <cn.iwgang.countdownview.CountdownView
+        android:id="@+id/vc_count_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:isHideTimeBackground="false"
+        app:isShowDay="true"
+        app:isShowHour="true"
+        app:isShowMillisecond="true"
+        app:isShowMinute="true"
+        app:isShowSecond="true"
+        app:isTimeTextBold="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_count_down_old"
+        app:suffixDay="天"
+        app:suffixGravity="center"
+        app:suffixHour="时"
+        app:suffixMillisecond=""
+        app:suffixMinute="分"
+        app:suffixSecond="秒"
+        app:suffixTextColor="#f24444"
+        app:suffixTextSize="24sp"
+        app:timeBgColor="#8BC34A"
+        app:timeBgRadius="2dp"
+        app:timeBgSize="16dp"
+        app:timeTextColor="#333333"
+        app:timeTextSize="20sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
