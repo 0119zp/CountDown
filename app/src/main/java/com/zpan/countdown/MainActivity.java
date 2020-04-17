@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         int currentMonth = TimeUtil.getCurrentYear();
         int currentDay = TimeUtil.getCurrentYear();
 
-        mBinding.tvCountDownYear.setText(currentYear + "年余额");
+        mBinding.tvCountDownYear.setText(currentYear + "年倒计时");
         long currentYearLastTime = TimeUtil.timeToStamp(currentYear + "-12-31 24:00:00");
         mBinding.vcCountDownYear.start(currentYearLastTime - currentTime);
         long todayLastTime = TimeUtil.timeToStamp(currentYear + "-" + currentMonth + "-" + currentDay + " 24:00:00");
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         String lastYear = String.valueOf(year + old);
         long lostTime = TimeUtil.timeToStamp(lastYear + "-" + month + "-" + day + " 00:00:00");
 
-        mBinding.tvCountDownOld.setText("距离" + old + "岁余额");
+        mBinding.tvCountDownOld.setText(old + "岁倒计时");
         mBinding.vcCountDown.setVisibility(View.VISIBLE);
         mBinding.vcCountDown.start(lostTime - currentTime);
     }
