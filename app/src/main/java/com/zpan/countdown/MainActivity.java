@@ -26,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
         int currentMonth = TimeUtil.getCurrentYear();
         int currentDay = TimeUtil.getCurrentYear();
 
-        mBinding.tvCountDownYear.setText(currentYear + "年倒计时");
-        long currentYearLastTime = TimeUtil.timeToStamp(currentYear + "-12-31 24:00:00");
+        mBinding.tvCountDownYear.setText(getString(R.string.current_year_count_down, currentYear));
+        long currentYearLastTime = TimeUtil.timeToStamp(getString(R.string.count_down_time, currentYear , 12, 31));
         mBinding.vcCountDownYear.start(currentYearLastTime - currentTime);
-        long todayLastTime = TimeUtil.timeToStamp(currentYear + "-" + currentMonth + "-" + currentDay + " 24:00:00");
+        long todayLastTime = TimeUtil.timeToStamp(getString(R.string.count_down_time, currentYear, currentMonth, currentDay));
         mBinding.vcCountDownToday.start(todayLastTime - currentTime);
 
         int spOld = SharedPreferencesHelper.getInstance(this).getInteger(Element.TIME_OLD, 60);
@@ -49,9 +49,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void setCountDown(long currentTime, int old, int year, String month, String day) {
         String lastYear = String.valueOf(year + old);
-        long lostTime = TimeUtil.timeToStamp(lastYear + "-" + month + "-" + day + " 00:00:00");
+        String spHour = SharedPreferencesHelper.getInstance(this).getString(Element.TIME_HOUR);
+        String spMinute = SharedPreferencesHelper.getInstance(this).getString(Element.TIME_MINUTE);
+        String spSecond = SharedPreferencesHelper.getInstance(this).getString(Element.TIME_SECOND);
 
-        mBinding.tvCountDownOld.setText(old + "岁倒计时");
+        long lostTime = TimeUtil.timeToStamp(getString(R.string.old_count_down_time, lastYear, month, day, spHour, spMinute, spSecond));
+
+        mBinding.tvCountDownOld.setText(getString(R.string.old_count_down, old));
         mBinding.vcCountDown.setVisibility(View.VISIBLE);
         mBinding.vcCountDown.start(lostTime - currentTime);
     }

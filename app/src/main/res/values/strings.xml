@@ -3,4 +3,10 @@
 
     <string name="date_ch_template">%1$d年%2$d月%3$d日</string>
     <string name="date_ch_no_day_template">%1$d年%2$d月</string>
+
+    <string name="current_year_count_down">%1$d年倒计时</string>
+    <string name="count_down_time">%1$d-%2$d-%3$d 24:00:00</string>
+    <string name="old_count_down">%1$d岁倒计时</string>
+    <string name="old_count_down_time">%1$s-%2$s-%3$s %4$s:%5$s:%6$s</string>
+
 </resources>
