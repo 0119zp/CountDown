@@ -45,6 +45,8 @@ public class SettingActivity extends AppCompatActivity {
             SharedPreferencesHelper.getInstance(this).putString(Element.TIME_DAY, day);
 
             Toast.makeText(this, "设置成功", Toast.LENGTH_SHORT).show();
+
+            finish();
         });
     }
 }

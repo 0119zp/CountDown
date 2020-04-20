@@ -14,9 +14,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         mBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mBinding.getRoot());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         long currentTime = System.currentTimeMillis();
         int currentYear = TimeUtil.getCurrentYear();
         int currentMonth = TimeUtil.getCurrentYear();
