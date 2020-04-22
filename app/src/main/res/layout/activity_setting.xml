@@ -23,6 +23,8 @@
         android:layout_width="100dp"
         android:layout_height="44dp"
         android:layout_marginLeft="20dp"
+        android:background="@drawable/bg_input"
+        android:gravity="center"
         android:hint="岁数"
         android:inputType="number"
         android:textColor="#666"
@@ -48,6 +50,7 @@
         android:layout_width="50dp"
         android:layout_height="44dp"
         android:layout_marginLeft="20dp"
+        android:background="@drawable/bg_input"
         android:gravity="center"
         android:hint="年"
         android:inputType="number"
@@ -56,37 +59,59 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_input_birthday_dec" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/line_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="—"
+        android:textColor="#333"
+        app:layout_constraintBottom_toBottomOf="@+id/et_input_year"
+        app:layout_constraintLeft_toRightOf="@+id/et_input_year"
+        app:layout_constraintTop_toTopOf="@+id/et_input_year" />
+
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_input_month"
         android:layout_width="50dp"
         android:layout_height="44dp"
-        android:layout_marginLeft="10dp"
+        android:background="@drawable/bg_input"
         android:gravity="center"
         android:hint="月"
         android:inputType="number"
         android:textColor="#666"
         android:textColorHint="#999"
-        app:layout_constraintLeft_toRightOf="@+id/et_input_year"
+        app:layout_constraintLeft_toRightOf="@+id/line_year"
         app:layout_constraintTop_toBottomOf="@+id/tv_input_birthday_dec" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/line_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="—"
+        android:textColor="#333"
+        app:layout_constraintBottom_toBottomOf="@+id/et_input_month"
+        app:layout_constraintLeft_toRightOf="@+id/et_input_month"
+        app:layout_constraintRight_toLeftOf="@+id/et_input_day"
+        app:layout_constraintTop_toTopOf="@+id/et_input_month" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_input_day"
         android:layout_width="50dp"
         android:layout_height="44dp"
-        android:layout_marginLeft="10dp"
+        android:background="@drawable/bg_input"
         android:gravity="center"
         android:hint="日"
         android:inputType="number"
         android:textColor="#666"
         android:textColorHint="#999"
-        app:layout_constraintLeft_toRightOf="@+id/et_input_month"
+        app:layout_constraintLeft_toRightOf="@+id/line_month"
         app:layout_constraintTop_toBottomOf="@+id/tv_input_birthday_dec" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_input_hour"
         android:layout_width="50dp"
         android:layout_height="44dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/bg_input"
         android:gravity="center"
         android:hint="时"
         android:inputType="number"
@@ -95,30 +120,50 @@
         app:layout_constraintLeft_toRightOf="@+id/et_input_day"
         app:layout_constraintTop_toBottomOf="@+id/tv_input_birthday_dec" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/line_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" : "
+        android:textColor="#333"
+        app:layout_constraintBottom_toBottomOf="@+id/et_input_hour"
+        app:layout_constraintLeft_toRightOf="@+id/et_input_hour"
+        app:layout_constraintTop_toTopOf="@+id/et_input_hour" />
+
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_input_minute"
         android:layout_width="50dp"
         android:layout_height="44dp"
-        android:layout_marginLeft="10dp"
+        android:background="@drawable/bg_input"
         android:gravity="center"
         android:hint="分"
         android:inputType="number"
         android:textColor="#666"
         android:textColorHint="#999"
-        app:layout_constraintLeft_toRightOf="@+id/et_input_hour"
+        app:layout_constraintLeft_toRightOf="@+id/line_hour"
         app:layout_constraintTop_toBottomOf="@+id/tv_input_birthday_dec" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/line_minute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" : "
+        android:textColor="#333"
+        app:layout_constraintBottom_toBottomOf="@+id/et_input_minute"
+        app:layout_constraintLeft_toRightOf="@+id/et_input_minute"
+        app:layout_constraintTop_toTopOf="@+id/et_input_minute" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_input_second"
         android:layout_width="50dp"
         android:layout_height="44dp"
-        android:layout_marginLeft="10dp"
+        android:background="@drawable/bg_input"
         android:gravity="center"
         android:hint="秒"
         android:inputType="number"
         android:textColor="#666"
         android:textColorHint="#999"
-        app:layout_constraintLeft_toRightOf="@+id/et_input_minute"
+        app:layout_constraintLeft_toRightOf="@+id/line_minute"
         app:layout_constraintTop_toBottomOf="@+id/tv_input_birthday_dec" />
 
     <androidx.appcompat.widget.AppCompatButton

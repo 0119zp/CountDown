@@ -7,6 +7,9 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import com.zpan.countdown.databinding.ActivityMainBinding;
 
+/**
+ * @author zpan
+ */
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding mBinding;
