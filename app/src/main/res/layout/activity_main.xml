@@ -13,7 +13,7 @@
         android:layout_height="88dp"
         android:background="#8BC34A"
         android:gravity="center"
-        android:text="时光不再，珍惜当下"
+        android:text="应该去做些事情了"
         android:textColor="#fff"
         android:textSize="30sp"
         android:textStyle="bold"
