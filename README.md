@@ -2,7 +2,7 @@
 人生倒计时
 
 ### 使用技术
-- ViewBinding
+- [ViewBinding](https://github.com/0119zp/feat-ViewBinding)
   节省书写findViewById
 - CountDownView
  倒计时控件
